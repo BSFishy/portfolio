@@ -1,26 +1,24 @@
-<svelte:head>
-	<title>About</title>
-	<meta name="description" content="About this app" />
-</svelte:head>
+<script>
+  import Centered from '$lib/Centered.svelte';
+</script>
 
-<div class="text-column">
-	<h1>About this app</h1>
+<Centered align="start" restrictWidth="true">
+  <h1>Hello</h1>
 
-	<p>
-		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
-		following into your command line and following the prompts:
-	</p>
+  <p>
+    My name is Matt. I'm a software developer currently based out of Seattle, Washington.
+    I have a huge number of hobbies and miscellaneous things I enjoy doing.
+    If you really look, you'll probably be able to find some of my thoughts about them <a href="/blog">over here</a>.
+  </p>
 
-	<pre>npm create svelte@latest</pre>
+  <p>
+    I currently work at AWS on the <a href="https://github.com/opensearch-project">OpenSearch Project</a>.
+    My work is mostly on <a href="https://github.com/opensearch-project/OpenSearch-Dashboards">OpenSearch Dashboards</a> and <a href="https://github.com/opensearch-project/oui">OUI</a>.
+  </p>
+</Centered>
 
-	<p>
-		The page you're looking at is purely static HTML, with no client-side interactivity needed.
-		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
-		the devtools network panel and reloading.
-	</p>
-
-	<p>
-		The <a href="/sverdle">Sverdle</a> page illustrates SvelteKit's data loading and form handling. Try
-		using it with JavaScript disabled!
-	</p>
-</div>
+<style>
+  p {
+      font-size: calc(var(--size) * 1.2);
+  }
+</style>

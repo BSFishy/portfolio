@@ -4,9 +4,41 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<style>
+			:root {
+				--size: 1rem;
+				--primary-color: #0f0f0f;
+				--secondary-color: #282828;
+				--background-color: #f0f0f0;
+
+				font-size: var(--size);
+				color: var(--primary-color);
+				background-color: var(--background-color);
+			}
+
+			@media (prefers-color-scheme: dark) {
+				:root {
+					--primary-color: #f0f0f0;
+					--secondary-color: #828282;
+					--background-color: #0f0f0f;
+				}
+			}
+
+			html,
+			body {
+				width: 100vw;
+				min-height: 100vh;
+			}
+
+			a {
+				color: var(--primary-color);
+			}
+		</style>
+
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">%sveltekit.body%</div>
+		%sveltekit.body%
 	</body>
 </html>
