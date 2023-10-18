@@ -21,6 +21,10 @@
           <span>{post.date?.toLocaleDateString()}</span>
         </article>
       </a>
+    {:else}
+      <p>
+        No content just yet. Stay tuned!
+      </p>
     {/each}
   </section>
 </Centered>

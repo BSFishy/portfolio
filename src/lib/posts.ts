@@ -1,26 +1,23 @@
-import { readdir, readFile } from 'node:fs/promises';
-import { resolve, join, dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { dev } from '$app/environment';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
 import matter from 'gray-matter';
 
-const DIRNAME = dirname(fileURLToPath(import.meta.url));
-const ROOT_DIRECTORY = resolve(DIRNAME, '..', '..');
-const POSTS_DIRECTORY = join(ROOT_DIRECTORY, 'posts');
+const POSTS = import.meta.glob('/posts/*.md', { eager: true, as: 'raw' });
 
 type Post = {
   slug: string,
   title: string,
   tagline: string,
   date?: Date,
+  draft: boolean,
   content: string,
 };
 
 export async function getPost(slug: string): Promise<Post> {
-  const contents = await readFile(join(POSTS_DIRECTORY, `${slug}.md`), { encoding: 'utf-8' });
+  const contents = POSTS[`/posts/${slug}.md`];
   const frontmatter = matter(contents);
   const html = await unified()
     .use(remarkParse)
@@ -32,6 +29,7 @@ export async function getPost(slug: string): Promise<Post> {
     title,
     tagline,
     date,
+    draft,
   } = frontmatter.data as Partial<Record<string, string>>;
 
   return {
@@ -39,6 +37,7 @@ export async function getPost(slug: string): Promise<Post> {
     title: title!,
     tagline: tagline!,
     date: date ? new Date(date) : undefined,
+    draft: !!draft,
     content: String(html),
   }
 }
@@ -46,17 +45,12 @@ export async function getPost(slug: string): Promise<Post> {
 export async function getPosts() {
   const posts: Array<Post> = [];
 
-  for (const file of await readdir(POSTS_DIRECTORY, { withFileTypes: true })) {
-    if (!file.isFile()) {
-      continue;
-    }
+  for (const filename in POSTS) {
+    const post = await getPost(filename.slice('/posts/'.length, filename.length - '.md'.length));
 
-    const filename = file.name;
-    if (!filename.endsWith('.md')) {
-      continue;
+    if (dev || !post.draft) {
+      posts.push(post);
     }
-
-    posts.push(await getPost(filename.slice(0, filename.length - '.md'.length)));
   }
 
   // wrote this while i was inebriated, so if it looks funky, that's why
@@ -86,6 +80,8 @@ export async function getPosts() {
 
     return 0;
   });
+
+  console.log(posts);
 
   return posts;
 }
