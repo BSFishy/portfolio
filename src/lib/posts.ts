@@ -81,7 +81,5 @@ export async function getPosts() {
     return 0;
   });
 
-  console.log(posts);
-
   return posts;
 }
