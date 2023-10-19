@@ -31,8 +31,20 @@
 		flex-direction: column;
 	}
 
+	@media (width > 1000px) {
+		.restrict-width {
+			max-width: 50%;
+		}
+	}
+
+	@media (width > 1600px) {
+		.restrict-width {
+			max-width: 33%;
+		}
+	}
+
 	.restrict-width {
-		max-width: 50%;
+		padding: 0 calc(var(--size) * 2);
 	}
 
 	.max-width {

@@ -5,7 +5,7 @@ import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
 import matter from 'gray-matter';
 
-const POSTS = import.meta.glob('/posts/*.md', { eager: true, as: 'raw' });
+const POSTS = import.meta.glob('/posts/*.md', { as: 'raw' });
 
 type Post = {
 	slug: string;
@@ -17,7 +17,7 @@ type Post = {
 };
 
 export async function getPost(slug: string): Promise<Post> {
-	const contents = POSTS[`/posts/${slug}.md`];
+	const contents = await POSTS[`/posts/${slug}.md`]();
 	const frontmatter = matter(contents);
 	const html = await unified()
 		.use(remarkParse)
@@ -38,32 +38,17 @@ export async function getPost(slug: string): Promise<Post> {
 }
 
 export async function getPosts() {
-	const posts: Array<Post> = [];
+	const postPromises: Array<Promise<Post>> = [];
 
 	for (const filename in POSTS) {
-		const post = await getPost(filename.slice('/posts/'.length, filename.length - '.md'.length));
-
-		if (dev || !post.draft) {
-			posts.push(post);
-		}
+		postPromises.push(getPost(filename.slice('/posts/'.length, filename.length - '.md'.length)));
 	}
 
-	// wrote this while i was inebriated, so if it looks funky, that's why
+	const posts = (await Promise.all(postPromises)).filter((post) => dev || !post.draft);
+
 	posts.sort((a, b) => {
-		const left = a.date;
-		const right = b.date;
-
-		if (!left) {
-			if (!right) {
-				return 0;
-			}
-
-			return 1;
-		}
-
-		if (!right) {
-			return -1;
-		}
+		const left = a.date ?? new Date(0);
+		const right = b.date ?? new Date(0);
 
 		if (left > right) {
 			return -1;
@@ -73,7 +58,10 @@ export async function getPosts() {
 			return 1;
 		}
 
-		return 0;
+		const leftTitle = a.title ?? '';
+		const rightTitle = b.title ?? '';
+
+		return leftTitle.localeCompare(rightTitle);
 	});
 
 	return posts;
