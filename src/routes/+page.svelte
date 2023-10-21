@@ -2,7 +2,7 @@
 	import Centered from '$lib/Centered.svelte';
 </script>
 
-<Centered>
+<Centered hasHeader={false}>
 	<h1>Matt Provost</h1>
 	<div>
 		<a href="/blog">Blog</a>
@@ -13,6 +13,7 @@
 <style>
 	h1 {
 		margin: 0;
+		font-size: calc(var(--size) * 3);
 	}
 
 	div {

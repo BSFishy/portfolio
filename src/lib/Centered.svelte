@@ -1,4 +1,7 @@
 <script>
+	import Header from '$lib/Header.svelte';
+	import Footer from '$lib/Footer.svelte';
+
 	export let align = 'center';
 
 	export let justify = 'center';
@@ -6,7 +9,13 @@
 	export let restrictWidth = false;
 
 	export let fullWidth = false;
+
+	export let hasHeader = true;
 </script>
+
+{#if hasHeader}
+	<Header />
+{/if}
 
 <main
 	class:align-center={align === 'center'}
@@ -19,9 +28,12 @@
 	<slot />
 </main>
 
+<Footer />
+
 <style>
 	:global(body) {
 		display: flex;
+		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 	}
@@ -29,22 +41,12 @@
 	main {
 		display: flex;
 		flex-direction: column;
-	}
-
-	@media (width > 1000px) {
-		.restrict-width {
-			max-width: 50%;
-		}
-	}
-
-	@media (width > 1600px) {
-		.restrict-width {
-			max-width: 33%;
-		}
+		flex: auto;
 	}
 
 	.restrict-width {
-		padding: 0 calc(var(--size) * 2);
+		margin: 0 calc(var(--size) * 2);
+		max-width: var(--max-width);
 	}
 
 	.max-width {
@@ -65,6 +67,5 @@
 
 	.justify-start {
 		justify-content: flex-start;
-		min-height: 100vh;
 	}
 </style>

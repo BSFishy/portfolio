@@ -12,7 +12,7 @@
 	<meta name="description" content={post.tagline} />
 </svelte:head>
 
-<Centered restrictWidth="true" fullWidth="true" align="start" justify="start">
+<Centered restrictWidth={true} fullWidth={true} align="start" justify="start" hasHeader={false}>
 	<a href="/blog">Back to blog</a>
 
 	<h1>{post.title}</h1>
@@ -31,6 +31,7 @@
 	}
 
 	h1 {
+		font-size: calc(var(--size) * 3.5);
 		margin: var(--size) 0 0;
 	}
 
@@ -42,5 +43,6 @@
 
 	summary {
 		margin-bottom: calc(var(--size) * 2);
+		font-size: calc(var(--size) * 1.2);
 	}
 </style>

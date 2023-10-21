@@ -2,7 +2,7 @@
 	import Centered from '$lib/Centered.svelte';
 </script>
 
-<Centered align="start" restrictWidth="true">
+<Centered align="start" restrictWidth={true}>
 	<h1>Hello</h1>
 
 	<p>

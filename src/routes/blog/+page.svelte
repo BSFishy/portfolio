@@ -7,7 +7,7 @@
 	let posts = data.posts;
 </script>
 
-<Centered restrictWidth="true" fullWidth="true" align="start" justify="start">
+<Centered restrictWidth={true} fullWidth={true} align="start" justify="start">
 	<h1>Blog</h1>
 
 	<p>Welcome to my blog! Here is where I spew some of my thoughts and things.</p>

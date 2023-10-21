@@ -9,10 +9,10 @@
 			:root {
 				--size: 1rem;
 				--primary-color: #0f0f0f;
-				--secondary-color: #282828;
+				--secondary-color: #6d6d6d;
 				--background-color: #f0f0f0;
+				--max-width: 95%;
 
-				font-size: var(--size);
 				color: var(--primary-color);
 				background-color: var(--background-color);
 			}
@@ -27,12 +27,28 @@
 
 			html,
 			body {
-				width: 100vw;
+				width: 100%;
 				min-height: 100vh;
+			}
+
+			html {
+				font-size: 1.2em;
 			}
 
 			a {
 				color: var(--primary-color);
+			}
+
+			@media (width > 1000px) {
+				:root {
+					--max-width: 75%;
+				}
+			}
+
+			@media (width > 1600px) {
+				:root {
+					--max-width: 50%;
+				}
 			}
 		</style>
 
