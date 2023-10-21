@@ -7,6 +7,11 @@
 	let posts = data.posts;
 </script>
 
+<svelte:head>
+	<title>Blog | Matt Provost</title>
+	<meta name="description" content="Blog posts" />
+</svelte:head>
+
 <Centered restrictWidth={true} fullWidth={true} align="start" justify="start">
 	<h1>Blog</h1>
 

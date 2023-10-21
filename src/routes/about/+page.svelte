@@ -2,6 +2,11 @@
 	import Centered from '$lib/Centered.svelte';
 </script>
 
+<svelte:head>
+	<title>About me | Matt Provost</title>
+	<meta name="description" content="About me" />
+</svelte:head>
+
 <Centered align="start" restrictWidth={true}>
 	<h1>Hello</h1>
 

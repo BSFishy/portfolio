@@ -2,6 +2,11 @@
 	import Centered from '$lib/Centered.svelte';
 </script>
 
+<svelte:head>
+	<title>Matt Provost</title>
+	<meta name="description" content="My portfolio and blog" />
+</svelte:head>
+
 <Centered hasHeader={false}>
 	<h1>Matt Provost</h1>
 	<div>
