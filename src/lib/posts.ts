@@ -1,6 +1,9 @@
 import { dev } from '$app/environment';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
+import remarkGfm from 'remark-gfm';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
 import matter from 'gray-matter';
@@ -21,7 +24,10 @@ export async function getPost(slug: string): Promise<Post> {
 	const frontmatter = matter(contents);
 	const html = await unified()
 		.use(remarkParse)
+		.use(remarkGfm)
 		.use(remarkRehype)
+		.use(rehypeSlug)
+		.use(rehypeAutolinkHeadings, { behavior: 'append' })
 		.use(rehypeStringify)
 		.process(frontmatter.content);
 

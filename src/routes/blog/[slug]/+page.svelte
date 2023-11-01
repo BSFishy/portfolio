@@ -45,4 +45,34 @@
 		margin-bottom: calc(var(--size) * 2);
 		font-size: calc(var(--size) * 1.2);
 	}
+
+	:global(hr) {
+		width: 25%;
+	}
+
+	:global(blockquote) {
+		border-left: calc(var(--size) * 0.2) solid var(--primary-color);
+		margin: var(--size);
+		padding: 0 var(--size);
+	}
+
+	:global(:not(pre) > code) {
+		padding: calc(var(--size) * 0.2);
+		border-radius: calc(var(--size) * 0.2);
+		background-color: var(--primary-color);
+		color: var(--background-color);
+	}
+
+	:global(pre:has(code)) {
+		width: 100%;
+		border-radius: calc(var(--size) * 0.5);
+		padding: calc(var(--size) * 0.5);
+		background-color: var(--primary-color);
+		color: var(--background-color);
+	}
+
+	:global(p) {
+		text-align: justify;
+		line-height: 1.8;
+	}
 </style>
