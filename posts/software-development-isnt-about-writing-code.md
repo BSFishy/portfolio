@@ -18,8 +18,8 @@ Any opinions and/or statements in this article are expressly my own and do not r
 ---
 
 At work, we've kicked off an exciting program called the [OpenSearch Contributor Initiative (OSCI)](https://opensearch.org/blog/Receive-mentorship-from-Amazon-engineers-and-accelerate-your-career-in-Tech/).
-This is a program targeted at people who are just starting out their careers in tech, by offering mentorship and guidance in contributing to our project.
-From the announcement post:
+It's designed to provide mentorship and guidance to those embarking on their tech careers.
+As the announcement post puts it:
 
 > Many today find it challenging to navigate the rugged terrain on their journey to a career in Tech.
 > You can’t know how long your chosen path will be, how difficult it will be, or even if it will lead to the desired destination.
@@ -30,47 +30,44 @@ From the announcement post:
 > Spanning 10 weeks, this fully remote program allows participants to receive mentorship from seasoned engineers within a nurturing and inclusive environment that fosters learning and collaboration.
 > Participants in OSCI will work with Amazon engineers and will enhance their portfolios by directly contributing to a prominent open-source software project.
 
-This program is a goldmine for college grads, bootcamp finishers, or anyone eager to dive headfirst into the world of code.
-As someone who's been down the self-taught route, I know firsthand the power of open source projects.
-So, when my manager asked if I'd mentor a group of contributors, I jumped on board faster than a developer racing to claim an unattended keyboard at a coding conference (this is a ChatGPT joke, don't @ me).
+This program is a goldmine for recent grads, bootcamp alumni, or anyone eager to dive into the world of code.
+Having trodden the self-taught path myself, I understand the power of open-source projects.
+When my manager asked if I'd mentor a group of contributors, I didn't hesitate - I was on it like a developer racing to claim an unattended keyboard at a coding conference (this is a ChatGPT joke, don't @ me).
 
-Mentoring these fresh faces has thrown me back to the days when I first dipped my toes into the vast ocean of code.
-I started coding when I was around 10 (now I'm a seasoned 21), and let me tell you, I've almost forgotten what it's like to tackle massive projects and decipher project-specific solutions.
-It's like trying to find your way through a maze made of spaghetti code (again, ChatGPT (What?? I'm not a comedian, but I wanted jokes))!
+Mentoring these fresh faces has brought back memories of my own early days in code.
+I started when I was around 10 (now I'm a seasoned 21), and let me tell you, I almost forgot what it's like to tackle massive projects and decipher project-specific solutions.
+It's like navigating through a maze made of spaghetti code (again, ChatGPT (What?? I'm not a comedian, but I wanted jokes))!
 
-An observation that I've had brewing in my mind for a while has been exacerbated by this exposure.
-Software development isn't just about typing out lines of code.
-That would be like trying to fix a leaky faucet by mopping the floor.
-Sure, it helps, but it doesn't tackle the root issue.
-We've got to dive deep, understand the problem, and only then unleash our code wizardry.
+Here's an observation that's been on my mind for a while, and only been amplified by this experience: software development is not just about typing lines of code.
+That's akin to mopping the floor to fix a leaky faucet - it helps, but it doesn't get to the root issue.
+We need to delve deep, understand the problem, and then apply our code wizardry.
 
-So, here's the deal: we're not just coders, we're problem-solvers.
-We're the detectives of the digital world, unearthing the mysteries hidden in those cryptic lines of code.
-Take, for instance, the infamous `memcpy` function.
+We're not just coders; we're problem-solvers.
+We're the detectives of the digital world, uncovering mysteries in those cryptic lines of code.
+Take, for example, the infamous `memcpy` function.
 To a newbie, it might as well be written in ancient hieroglyphics.
-But for us seasoned pros, it's like our trusty old toolbox—a bit meticulous, but no magic wands involved.
+But to seasoned pros, it's like a trusty old toolbox - a bit meticulous, but no magic wands involved.
 
 > For those who don't know, `memcpy` is a function in libc that copies a region of memory from one place to another.
-> It's used a lot in languages like C to duplicate pieces of memory, the same way you might clone or duplicate in another language.
+> It's heavily used in languages like C to duplicate pieces of memory, similar to cloning in other languages.
 
-Let's talk about creating our own `memcpy`.
-Sounds daunting, right?
-But wait, let's break it down. There are a few basic prerequisites we need to identify:
+Creating our own `memcpy` may sound daunting, but let's break it down.
+We need a few basic prerequisites:
 
 - A size of memory to copy, implying the need for basic integer support
 - A pointer to the source and to the destination, implying the need for pointer support
 - Simple looping functionality
 
-Basic stuff, really!
+Basic stuff, really.
 With these essentials in hand, we're ready to dance.
 And the beauty is, this dance is universal!
 You can do it in any language that speaks the same prerequisites.
 
-Our custom `memcpy` implementation is straightforward: with the given size to copy, `size`, along with source pointer `src` and destination pointer `dst`, iterate from 0 to `size`.
+Our custom `memcpy` implementation is straightforward: given the size to copy (`size`), along with source pointer (`src`) and destination pointer (`dst`), iterate from 0 to `size`.
 At each iteration (`i`), copy the `i`-th byte from `src` to the `i`-th byte in `dst`.
-Given this basic solution, it can be implemented nearly 1:1 in any language that supports the aforementioned prerequisites.
+This solution can be implemented almost one-to-one in any language that supports the aforementioned prerequisites.
 
-For instance, here it is in pseudocode:
+For instance, in pseudocode:
 
 ```text
 function memcpy(int size, pointer src, pointer dst) {
@@ -80,7 +77,7 @@ function memcpy(int size, pointer src, pointer dst) {
 }
 ```
 
-And here is how it would look in C (I know the compiler will throw errors on the void pointer dereference, but it's fine, whatever, touch grass):
+And here is how it would look in C (yes, I know the compiler will throw errors on the void pointer dereference, but it's fine, whatever, touch grass):
 
 ```c
 void memcpy(unsigned int size, void* src, void* dst) {
@@ -90,7 +87,7 @@ void memcpy(unsigned int size, void* src, void* dst) {
 }
 ```
 
-And here is how it would look in Rust:
+And in Rust:
 
 ```rust
 unsafe fn memcpy<T: Copy>(size: usize, src: *const T, dst: *mut T) {
@@ -100,14 +97,23 @@ unsafe fn memcpy<T: Copy>(size: usize, src: *const T, dst: *mut T) {
 }
 ```
 
-Sure, the code isn't always a carbon copy in different languages, but hey, who said variety wasn't the spice of a coder's life?
+While the code may not be an exact match in different languages, variety is the spice of a coder's life.
 
-But here's where it gets juicy.
-When you're facing off with a behemoth like a merge sort algorithm, it's not about banging on keys like a maniac.
-It's about strategy, finesse, and a sprinkle of developer's intuition.
+This alignment between our initial conceptual breakdown and the actual code implementations underscores a crucial point.
+The core principles of programming, such as memory manipulation and looping, are language-agnostic.
+They form the foundation upon which all code is built.
+
+This parallel serves as a testament to the beauty of programming.
+It demonstrates that regardless of the language you choose, the fundamental logic remains consistent.
+It's like different dialects of the same universal language.
+
+Now, let's talk about facing off with a behemoth like a merge sort algorithm.
+It's not about frenzied key-banging; it's about strategy, finesse, and a sprinkle of developer's intuition.
 It's like chess, but with fewer knights and more parentheses.
 
-Now, I won't dive into the details of the merge sort algorithm (you've got [Wikipedia](https://en.wikipedia.org/wiki/Merge_sort) for that), but remember this: once you've got the algorithm in your pocket, you're like a chef who can whip up a gourmet meal in any kitchen!
+I won't delve into the details of the merge sort algorithm (you've got [Wikipedia](https://en.wikipedia.org/wiki/Merge_sort) for that), but remember this: once you've got the algorithm in your pocket, you're like a chef who can whip up a gourmet meal in any kitchen!
+The point is that more complexity requires more thought and more complex problem-solving.
+A good merge sort implementation doesn't happen by smashing your head on the keyboard, but rather through planning.
 
 So, here's the grand finale: code is our conductor's baton, our spellbook for the digital realm.
 It's our Rosetta Stone, translating human thought into the language of machines.
