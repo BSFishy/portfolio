@@ -1,6 +1,7 @@
 import { dev } from '$app/environment';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
+import remarkEmoji from 'remark-emoji';
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
@@ -25,6 +26,7 @@ export async function getPost(slug: string): Promise<Post> {
 	const html = await unified()
 		.use(remarkParse)
 		.use(remarkGfm)
+		.use(remarkEmoji)
 		.use(remarkRehype)
 		.use(rehypeSlug)
 		.use(rehypeAutolinkHeadings, { behavior: 'append' })
