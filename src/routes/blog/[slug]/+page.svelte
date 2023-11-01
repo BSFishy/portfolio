@@ -63,7 +63,7 @@
 		color: var(--background-color);
 	}
 
-	:global(pre:has(code)) {
+	:global(pre) {
 		width: 100%;
 		border-radius: calc(var(--size) * 0.5);
 		padding: calc(var(--size) * 0.5);
