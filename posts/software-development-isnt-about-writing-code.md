@@ -145,3 +145,17 @@ So, fellow code composers, let's continue to channel our ideas through the condu
 Let the problem be the spark, the solution be the flame, and the code be the torch that illuminates the path from concept to reality.
 With this perspective, you're not just a programmer; you're an architect of the digital realm, a maestro of thought-to-action, and a virtuoso of code.
 Let's keep forging ahead, creating, and transforming ideas into digital masterpieces! :rocket: :sparkles:
+
+---
+
+> **ChatGPT disclaimer:** Yes, I used ChatGPT when writing this article.
+> It was mainly used for editorial purposes; I wrote the whole article, the passed it through ChatGPT a few times, asking for specific things like more jokes, stronger analogies, etc.
+> I occasionally used it to generate content, when I didn't know what to write, but I only gave the final stamp of approval after I did a final pass of editing myself and made sure it **accurately** reflects my ideas.
+
+Thanks for reading!
+This is the first time I've done something like this, and I enjoyed getting my thoughts onto paper (or rather a computer screen, I guess), so maybe you'll see more of me.
+
+If you're interested in chatting (again, I really don't care to argue about the content of this article, it really doesn't matter), feel free to hit me up on Discord.
+My username is @mattprovalone.
+
+I'll probably be making some changes to the formatting of this page in the coming days, because I want to add some things like syntax highlighting and better markdown -> HTML, so if you come back later and it looks different, that's why :)
