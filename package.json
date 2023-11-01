@@ -37,7 +37,8 @@
 		"tslib": "^2.4.1",
 		"typescript": "^5.0.0",
 		"unified": "^11.0.3",
-		"vite": "^4.4.2"
+		"vite": "^4.4.2",
+		"web-vitals": "^3.5.0"
 	},
 	"type": "module"
 }

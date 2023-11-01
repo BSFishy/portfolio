@@ -25,7 +25,7 @@ As the announcement post puts it:
 > You can’t know how long your chosen path will be, how difficult it will be, or even if it will lead to the desired destination.
 > You might be questioning whether your coursework is genuinely preparing you for roles in major tech companies.
 > In keeping with the theme of the image above, the OpenSearch Project presents an “Aerial Balloon Express” to bridge the skill and experience gap between your current position and your ultimate career destination.
-> 
+>
 > This proverbial “Aerial Balloon Express” is the Open Source Contributor Initiative (OSCI).
 > Spanning 10 weeks, this fully remote program allows participants to receive mentorship from seasoned engineers within a nurturing and inclusive environment that fosters learning and collaboration.
 > Participants in OSCI will work with Amazon engineers and will enhance their portfolios by directly contributing to a prominent open-source software project.
