@@ -35,15 +35,33 @@
 				color: var(--primary-color);
 			}
 
-			@media (width > 1000px) {
+			@media screen and (min-width: 600px) {
 				:root {
-					--max-width: 50%;
+					--max-width: 90%;
 				}
 			}
 
-			@media (width > 1600px) {
+			@media screen and (min-width: 768px) {
 				:root {
-					--max-width: 33%;
+					--max-width: 80%;
+				}
+			}
+
+			@media screen and (min-width: 1024px) {
+				:root {
+					--max-width: 70%;
+				}
+			}
+
+			@media screen and (min-width: 1440px) {
+				:root {
+					--max-width: 60%;
+				}
+			}
+
+			@media screen and (min-width: 1600px) {
+				:root {
+					--max-width: 40%;
 				}
 			}
 		</style>
