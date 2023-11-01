@@ -149,8 +149,9 @@ Let's keep forging ahead, creating, and transforming ideas into digital masterpi
 ---
 
 > **ChatGPT disclaimer:** Yes, I used ChatGPT when writing this article.
-> It was mainly used for editorial purposes; I wrote the whole article, the passed it through ChatGPT a few times, asking for specific things like more jokes, stronger analogies, etc.
+> It was mainly used for editorial purposes; I wrote the whole article, then passed it through ChatGPT a few times, asking for specific things like more jokes, stronger analogies, etc.
 > I occasionally used it to generate content, when I didn't know what to write, but I only gave the final stamp of approval after I did a final pass of editing myself and made sure it **accurately** reflects my ideas.
+> If you want to see the full log of changes, including my first draft, check the [commit log on Github](https://github.com/BSFishy/portfolio/commits/main/posts/software-development-isnt-about-writing-code.md).
 
 Thanks for reading!
 This is the first time I've done something like this, and I enjoyed getting my thoughts onto paper (or rather a computer screen, I guess), so maybe you'll see more of me.
