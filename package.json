@@ -17,7 +17,7 @@
 		"@types/node": "^20.8.6",
 		"@typescript-eslint/eslint-plugin": "^6.0.0",
 		"@typescript-eslint/parser": "^6.0.0",
-		"@vercel/analytics": "^1.1.1",
+		"@vercel/speed-insights": "^1.0.10",
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte": "^2.30.0",
