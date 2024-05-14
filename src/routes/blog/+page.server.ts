@@ -12,4 +12,4 @@ export const load: PageServerLoad = async () => {
 
 export const prerender = true;
 
-export const cst = dev;
+export const csr = dev;
