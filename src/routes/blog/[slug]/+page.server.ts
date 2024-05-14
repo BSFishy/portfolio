@@ -1,5 +1,6 @@
 import type { PageServerLoad, EntryGenerator } from './$types';
 import { getPost, getPosts } from '$lib/posts';
+import { dev } from '$app/environment';
 
 export const load: PageServerLoad = async ({ params }) => {
 	const post = await getPost(params.slug);
@@ -18,3 +19,5 @@ export const entries: EntryGenerator = async () => {
 };
 
 export const prerender = true;
+
+export const csr = dev;
