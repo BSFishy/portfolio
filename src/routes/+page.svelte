@@ -3,7 +3,6 @@
 	import Github from '$lib/icons/Github.svelte';
 	import LinkedIn from '$lib/icons/LinkedIn.svelte';
 	import Blog from '$lib/icons/Blog.svelte';
-	import Experience from '$lib/Experience.svelte';
 </script>
 
 <svelte:head>
@@ -19,8 +18,8 @@
 		<a href="/blog/"><Blog size={1.5} /></a>
 	</div>
 	<div class="items">
-		<a href="/about/">About me</a>
-		<a href="/blog/">Blog</a>
+		<a href="/about">About me</a>
+		<a href="/blog">Blog</a>
 	</div>
 </Centered>
 
