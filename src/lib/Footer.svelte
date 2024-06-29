@@ -1,4 +1,4 @@
-<footer>&copy; Matt Provost 2023</footer>
+<footer>&copy; Matt Provost 2023-2024</footer>
 
 <style>
 	footer {
