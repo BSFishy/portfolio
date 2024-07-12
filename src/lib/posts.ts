@@ -9,7 +9,7 @@ import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
 import matter from 'gray-matter';
 
-const POSTS = import.meta.glob('/posts/*.md', { as: 'raw' });
+const POSTS = import.meta.glob('/posts/*.md?raw');
 
 type Post = {
 	slug: string;
@@ -21,7 +21,7 @@ type Post = {
 };
 
 export async function getPost(slug: string): Promise<Post> {
-	const contents = await POSTS[`/posts/${slug}.md`]();
+	const contents = (await POSTS[`/posts/${slug}.md`]()) as string;
 	const frontmatter = matter(contents);
 	const html = await unified()
 		.use(remarkParse)
