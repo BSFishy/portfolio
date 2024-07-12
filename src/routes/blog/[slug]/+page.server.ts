@@ -16,3 +16,5 @@ export const entries: EntryGenerator = async () => {
 		slug: post.slug
 	}));
 };
+
+export const prerender = true;

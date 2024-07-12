@@ -7,8 +7,6 @@ declare global {
 		// interface PageData {}
 		// interface Platform {}
 	}
-
-	const POSTS: string[];
 }
 
 export {};
