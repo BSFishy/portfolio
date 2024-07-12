@@ -9,7 +9,7 @@ import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
 import matter from 'gray-matter';
 
-// const POSTS = import.meta.glob('/posts/*.md', { query: 'raw', import: 'default' });
+const POSTS = import.meta.glob('../../posts/*.md', { query: 'raw', import: 'default' });
 
 type Post = {
 	slug: string;
@@ -21,8 +21,7 @@ type Post = {
 };
 
 export async function getPost(slug: string): Promise<Post> {
-	// const contents = (await POSTS[`/posts/${slug}.md`]()) as string;
-	const contents = '';
+	const contents = (await POSTS[`../../posts/${slug}.md`]()) as string;
 	const frontmatter = matter(contents);
 	const html = await unified()
 		.use(remarkParse)
@@ -49,9 +48,11 @@ export async function getPost(slug: string): Promise<Post> {
 export async function getPosts() {
 	const postPromises: Array<Promise<Post>> = [];
 
-	// for (const filename in POSTS) {
-	// 	postPromises.push(getPost(filename.slice('/posts/'.length, filename.length - '.md'.length)));
-	// }
+	for (const filename in POSTS) {
+		postPromises.push(
+			getPost(filename.slice('../../posts/'.length, filename.length - '.md'.length))
+		);
+	}
 
 	const posts = (await Promise.all(postPromises)).filter((post) => dev || !post.draft);
 
