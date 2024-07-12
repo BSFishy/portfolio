@@ -17,4 +17,5 @@ export const entries: EntryGenerator = async () => {
 	}));
 };
 
+// NOTE: this is required on Cloudflare, for whatever reason (something about dynamic imports)
 export const prerender = true;
