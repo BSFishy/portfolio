@@ -1,5 +1,5 @@
 import type { PageServerLoad, EntryGenerator } from './$types';
-import { getPost, getPosts } from '$lib/posts';
+import { getPost, getPosts } from '$lib/server/posts';
 
 export const load: PageServerLoad = async ({ params }) => {
 	const post = await getPost(params.slug);
