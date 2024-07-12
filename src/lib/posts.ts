@@ -9,7 +9,7 @@ import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
 import matter from 'gray-matter';
 
-const POSTS = import.meta.glob('/posts/*.md?raw');
+const POSTS = import.meta.glob('/posts/*.md', { query: 'raw', import: 'default' });
 
 type Post = {
 	slug: string;
