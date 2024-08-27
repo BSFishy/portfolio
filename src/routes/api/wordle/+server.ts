@@ -5,5 +5,9 @@ function choices<T>(options: T[]): T {
 }
 
 export function GET() {
-	return json(choices(['apple', 'balls', 'stake', 'skate', 'acorn']));
+	return json(choices(['apple', 'balls', 'stake', 'skate', 'acorn']), {
+		headers: {
+			'Access-Control-Allow-Origin': '*'
+		}
+	});
 }
