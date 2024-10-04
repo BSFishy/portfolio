@@ -1,5 +1,5 @@
 <header>
-	<a href="/">Matt Provost</a>
+	<h2><a href="/">Matt Provost</a></h2>
 </header>
 
 <style>

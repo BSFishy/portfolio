@@ -62,6 +62,5 @@
 
 	span {
 		font-size: calc(var(--size) * 0.8);
-		color: var(--secondary-color);
 	}
 </style>

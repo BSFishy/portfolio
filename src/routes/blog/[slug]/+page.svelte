@@ -37,7 +37,6 @@
 
 	span {
 		font-size: calc(var(--size) * 0.8);
-		color: var(--secondary-color);
 		margin-bottom: calc(var(--size) * 1.5);
 	}
 
@@ -48,10 +47,11 @@
 
 	:global(hr) {
 		width: 25%;
+		color: var(--text-color);
 	}
 
 	:global(blockquote) {
-		border-left: calc(var(--size) * 0.2) solid var(--primary-color);
+		border-left: calc(var(--size) * 0.3) solid var(--primary-color);
 		margin: var(--size);
 		padding: 0 var(--size);
 	}
@@ -59,7 +59,7 @@
 	:global(:not(pre) > code) {
 		padding: calc(var(--size) * 0.2);
 		border-radius: calc(var(--size) * 0.2);
-		background-color: var(--primary-color);
+		background-color: var(--text-color);
 		color: var(--background-color);
 	}
 
@@ -67,7 +67,7 @@
 		width: 100%;
 		border-radius: calc(var(--size) * 0.5);
 		padding: calc(var(--size) * 0.5);
-		background-color: var(--primary-color);
+		background-color: var(--text-color);
 		color: var(--background-color);
 	}
 
