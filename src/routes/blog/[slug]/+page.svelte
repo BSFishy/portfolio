@@ -47,7 +47,7 @@
 
 	:global(hr) {
 		width: 25%;
-		color: var(--text-color);
+		border-color: var(--text-color);
 	}
 
 	:global(blockquote) {
