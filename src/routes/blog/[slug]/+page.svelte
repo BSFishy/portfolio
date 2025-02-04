@@ -42,18 +42,16 @@
 		}
 
 		:not(pre) > code {
-			padding: calc(var(--size) * 0.2);
-			border-radius: calc(var(--size) * 0.2);
-			background-color: var(--text-color);
-			color: var(--background-color);
+			padding: calc(var(--spacing) * 0.2);
+			border-radius: calc(var(--spacing) * 0.2);
+			background-color: var(--color-text-200);
+			color: var(--color-background-900);
 		}
 
 		pre {
 			width: 100%;
-			border-radius: calc(var(--size) * 0.5);
-			padding: calc(var(--size) * 0.5);
-			background-color: var(--text-color);
-			color: var(--background-color);
+			border-radius: calc(var(--spacing) * 0.5);
+			padding: calc(var(--spacing) * 0.5);
 		}
 
 		a {
