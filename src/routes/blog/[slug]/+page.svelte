@@ -52,6 +52,7 @@
 			width: 100%;
 			border-radius: calc(var(--spacing) * 0.5);
 			padding: calc(var(--spacing) * 0.5);
+			overflow: auto;
 		}
 
 		a {
