@@ -2,6 +2,7 @@
 title: Software Development isn't About Writing Code
 tagline: Stop learning wrong.
 date: 2023-10-31T20:11:00.000-07:00
+draft: false
 ---
 
 **Obligatory disclaimer:** This article is purely an opinion piece.

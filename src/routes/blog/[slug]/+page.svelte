@@ -13,66 +13,65 @@
 </svelte:head>
 
 <Centered restrictWidth={true} fullWidth={true} align="start" justify="start" hasHeader={false}>
-	<a href="/blog">Back to blog</a>
+	<a class="mt-1 underline" href="/blog">Back to blog</a>
 
-	<h1>{post.title}</h1>
+	<h1 class="text-6xl mt-1">{post.title}</h1>
 
-	<span>{post.date?.toLocaleDateString()}</span>
+	<span class="text-sm mb-1.5">{post.date?.toLocaleDateString()}</span>
 
-	<summary>{post.tagline}</summary>
+	<summary class="block mb-2 text-xl">{post.tagline}</summary>
 
-	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-	{@html post.content}
+	<div class="blog-contents" style="display: contents">
+		<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+		{@html post.content}
+	</div>
 </Centered>
 
 <style>
-	a {
-		margin-top: var(--size);
-	}
+	div :global {
+		hr {
+			width: 25%;
+			margin: var(--spacing) auto;
+			border-color: var(--color-text-200);
+		}
 
-	h1 {
-		font-size: calc(var(--size) * 3.5);
-		margin: var(--size) 0 0;
-	}
+		blockquote {
+			border-left: calc(var(--spacing) * 0.3) solid var(--color-primary-500);
+			margin: var(--spacing);
+			padding: 0 var(--spacing);
+		}
 
-	span {
-		font-size: calc(var(--size) * 0.8);
-		margin-bottom: calc(var(--size) * 1.5);
-	}
+		:not(pre) > code {
+			padding: calc(var(--size) * 0.2);
+			border-radius: calc(var(--size) * 0.2);
+			background-color: var(--text-color);
+			color: var(--background-color);
+		}
 
-	summary {
-		margin-bottom: calc(var(--size) * 2);
-		font-size: calc(var(--size) * 1.2);
-	}
+		pre {
+			width: 100%;
+			border-radius: calc(var(--size) * 0.5);
+			padding: calc(var(--size) * 0.5);
+			background-color: var(--text-color);
+			color: var(--background-color);
+		}
 
-	:global(hr) {
-		width: 25%;
-		border-color: var(--text-color);
-	}
+		a {
+			text-decoration: underline;
+		}
 
-	:global(blockquote) {
-		border-left: calc(var(--size) * 0.3) solid var(--primary-color);
-		margin: var(--size);
-		padding: 0 var(--size);
-	}
+		li {
+			list-style: disc;
+		}
 
-	:global(:not(pre) > code) {
-		padding: calc(var(--size) * 0.2);
-		border-radius: calc(var(--size) * 0.2);
-		background-color: var(--text-color);
-		color: var(--background-color);
-	}
+		ul {
+			padding: revert;
+		}
 
-	:global(pre) {
-		width: 100%;
-		border-radius: calc(var(--size) * 0.5);
-		padding: calc(var(--size) * 0.5);
-		background-color: var(--text-color);
-		color: var(--background-color);
-	}
-
-	:global(p) {
-		text-align: justify;
-		line-height: 1.8;
+		p {
+			text-align: justify;
+			line-height: 1.8;
+			margin: var(--spacing) 0;
+		}
 	}
 </style>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -14,19 +14,12 @@
 				--secondary-color: #141d3e;
 				--accent-color: #214f34;
 				--max-width: 95%;
-
-				color: var(--text-color);
-				background-color: var(--background-color);
 			}
 
 			html,
 			body {
 				width: 100%;
 				min-height: 100vh;
-			}
-
-			a {
-				color: var(--text-color);
 			}
 
 			@media screen and (min-width: 600px) {
@@ -62,7 +55,7 @@
 
 		%sveltekit.head%
 	</head>
-	<body data-sveltekit-preload-data="hover">
+	<body data-sveltekit-preload-data="hover" class="bg-background-900 text-text-200">
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>

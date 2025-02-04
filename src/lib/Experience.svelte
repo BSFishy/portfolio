@@ -2,51 +2,14 @@
 	export let company: string;
 
 	export let title: string;
-
-	export let items: Array<string>;
-
-	export let from: string | undefined = undefined;
-
-	export let to: string | undefined = undefined;
-
-	export let location: string | undefined = undefined;
 </script>
 
-<div class="container">
-	<h3><b>{company}</b> - {title}</h3>
-	{#if location}
-		<span class="location">{location}</span>
-		<br />
-	{/if}
-
-	{#if from}
-		{from} -
-		{#if to}
-			{to}
-		{:else}
-			Present
-		{/if}
-		<br />
-	{/if}
-
-	<ul>
-		{#each items as item}
-			<li>{item}</li>
-		{/each}
-	</ul>
+<div class="flex flex-row border-2 rounded-8xl p-1 w-full mt-1">
+	<div class="bg-text-200 rounded-6xl p-0.5 h-min">
+		<slot />
+	</div>
+	<div class="exp-data mx-1 flex flex-col justify-center">
+		<h4 class="text-2xl">{company}</h4>
+		<p>{title}</p>
+	</div>
 </div>
-
-<style>
-	.container {
-		width: 100%;
-	}
-
-	h3 {
-		margin: 0;
-		font-size: calc(var(--size) * 1.5);
-	}
-
-	.location {
-		font-size: calc(var(--size) * 1.2);
-	}
-</style>

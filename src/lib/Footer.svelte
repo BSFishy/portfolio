@@ -1,9 +1,1 @@
-<footer>&copy; Matt Provost 2023-2024</footer>
-
-<style>
-	footer {
-		width: 100%;
-		text-align: center;
-		margin: var(--size);
-	}
-</style>
+<footer class="w-full text-center m-1">&copy; Matt Provost 2023-2024</footer>

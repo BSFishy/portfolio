@@ -18,12 +18,18 @@
 {/if}
 
 <main
-	class:align-center={align === 'center'}
-	class:align-start={align === 'start'}
-	class:restrict-width={restrictWidth}
-	class:max-width={fullWidth}
-	class:justify-center={justify === 'center'}
-	class:justify-start={justify === 'start'}
+	class={{
+		flex: true,
+		'flex-col': true,
+		'flex-auto': true,
+		'items-center': align === 'center',
+		'items-start': align === 'start',
+		'mx-2': restrictWidth,
+		'max-w-(--max-width)': restrictWidth,
+		'w-full': fullWidth,
+		'justify-center': justify === 'center',
+		'justify-start': justify === 'start'
+	}}
 >
 	<slot />
 </main>
@@ -36,36 +42,5 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-	}
-
-	main {
-		display: flex;
-		flex-direction: column;
-		flex: auto;
-	}
-
-	.restrict-width {
-		margin: 0 calc(var(--size) * 2);
-		max-width: var(--max-width);
-	}
-
-	.max-width {
-		width: 100%;
-	}
-
-	.align-center {
-		align-items: center;
-	}
-
-	.align-start {
-		align-items: flex-start;
-	}
-
-	.justify-center {
-		justify-content: center;
-	}
-
-	.justify-start {
-		justify-content: flex-start;
 	}
 </style>

@@ -1,0 +1,43 @@
+@import 'tailwindcss';
+@source 'app.html';
+
+@theme {
+	--spacing: 1rem;
+
+	--radius-6xl: 2rem;
+	--radius-8xl: 3rem;
+
+	--color-background-base: var(--color-stone-500);
+	--color-text-base: var(--color-amber-500);
+	--color-primary-base: var(--color-red-500);
+
+	--color-background-100: color-mix(in srgb, var(--color-background-base) 20%, white);
+	--color-background-200: color-mix(in srgb, var(--color-background-base) 40%, white);
+	--color-background-300: color-mix(in srgb, var(--color-background-base) 60%, white);
+	--color-background-400: color-mix(in srgb, var(--color-background-base) 80%, white);
+	--color-background-500: var(--color-background-base);
+	--color-background-600: color-mix(in srgb, var(--color-background-base) 80%, black);
+	--color-background-700: color-mix(in srgb, var(--color-background-base) 60%, black);
+	--color-background-800: color-mix(in srgb, var(--color-background-base) 40%, black);
+	--color-background-900: color-mix(in srgb, var(--color-background-base) 20%, black);
+
+	--color-text-100: color-mix(in srgb, var(--color-text-base) 20%, white);
+	--color-text-200: color-mix(in srgb, var(--color-text-base) 40%, white);
+	--color-text-300: color-mix(in srgb, var(--color-text-base) 60%, white);
+	--color-text-400: color-mix(in srgb, var(--color-text-base) 80%, white);
+	--color-text-500: var(--color-text-base);
+	--color-text-600: color-mix(in srgb, var(--color-text-base) 80%, black);
+	--color-text-700: color-mix(in srgb, var(--color-text-base) 60%, black);
+	--color-text-800: color-mix(in srgb, var(--color-text-base) 40%, black);
+	--color-text-900: color-mix(in srgb, var(--color-text-base) 20%, black);
+
+	--color-primary-100: color-mix(in srgb, var(--color-primary-base) 20%, white);
+	--color-primary-200: color-mix(in srgb, var(--color-primary-base) 40%, white);
+	--color-primary-300: color-mix(in srgb, var(--color-primary-base) 60%, white);
+	--color-primary-400: color-mix(in srgb, var(--color-primary-base) 80%, white);
+	--color-primary-500: var(--color-primary-base);
+	--color-primary-600: color-mix(in srgb, var(--color-primary-base) 80%, black);
+	--color-primary-700: color-mix(in srgb, var(--color-primary-base) 60%, black);
+	--color-primary-800: color-mix(in srgb, var(--color-primary-base) 40%, black);
+	--color-primary-900: color-mix(in srgb, var(--color-primary-base) 20%, black);
+}

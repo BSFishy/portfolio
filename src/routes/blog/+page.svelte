@@ -17,13 +17,13 @@
 
 	<p>Welcome to my blog! Here is where I spew some of my thoughts and things.</p>
 
-	<section>
+	<section class="w-full">
 		{#each posts as post}
-			<a href={`/blog/${post.slug}`}>
-				<article>
-					<h2>{post.title}</h2>
-					<summary>{post.tagline}</summary>
-					<span>{post.date?.toLocaleDateString()}</span>
+			<a class="hover:underline" href={`/blog/${post.slug}`}>
+				<article class="py-3">
+					<h2 class="mb-1">{post.title}</h2>
+					<summary class="block">{post.tagline}</summary>
+					<span class="text-sm">{post.date?.toLocaleDateString()}</span>
 				</article>
 			</a>
 		{:else}
@@ -33,34 +33,7 @@
 </Centered>
 
 <style>
-	section {
-		width: 100%;
-	}
-
 	section > *:not(:first-child) > * {
 		border-top: var(--border-size) solid var(--primary-color);
-	}
-
-	section > * > * {
-		--border-size: calc(var(--size) * 0.2);
-		--margin-size: calc(var(--size) * 3);
-
-		padding: var(--margin-size) 0 var(--margin-size);
-	}
-
-	a {
-		text-decoration: none;
-	}
-
-	a:hover {
-		text-decoration: underline;
-	}
-
-	h2 {
-		margin: 0 0 var(--size);
-	}
-
-	span {
-		font-size: calc(var(--size) * 0.8);
 	}
 </style>
