@@ -1,5 +1,6 @@
 import { dev } from '$app/environment';
 import { unified } from 'unified';
+import rehypeShiki from '@shikijs/rehype';
 import remarkParse from 'remark-parse';
 import remarkEmoji from 'remark-emoji';
 import remarkGfm from 'remark-gfm';
@@ -28,6 +29,9 @@ export async function getPost(slug: string): Promise<Post> {
 		.use(remarkGfm)
 		.use(remarkEmoji)
 		.use(remarkRehype)
+		.use(rehypeShiki, {
+			theme: 'vitesse-dark'
+		})
 		.use(rehypeSlug)
 		.use(rehypeAutolinkHeadings, { behavior: 'append' })
 		.use(rehypeStringify)

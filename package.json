@@ -12,10 +12,12 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
+		"@shikijs/rehype": "^2.2.0",
 		"@sveltejs/adapter-auto": "^4.0.0",
 		"@sveltejs/enhanced-img": "^0.3.8",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
+		"@tailwindcss/vite": "^4.0.3",
 		"@types/node": "^20.8.6",
 		"@typescript-eslint/eslint-plugin": "^6.0.0",
 		"@typescript-eslint/parser": "^6.0.0",
@@ -34,12 +36,11 @@
 		"remark-rehype": "^11.0.0",
 		"svelte": "^5.19.7",
 		"svelte-check": "^3.4.3",
+		"tailwindcss": "^4.0.3",
 		"tslib": "^2.4.1",
 		"typescript": "^5.0.0",
 		"unified": "^11.0.3",
 		"vite": "^6.0.0",
-		"@tailwindcss/vite": "^4.0.3",
-		"tailwindcss": "^4.0.3",
 		"web-vitals": "^3.5.0",
 		"wrangler": "^3.64.0"
 	},
