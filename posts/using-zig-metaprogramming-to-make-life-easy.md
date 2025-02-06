@@ -598,7 +598,10 @@ away something and maybe write some cool comptime too :)
 
 ---
 
-Thanks thanks for reading! My name is Matt and I'm super passionate about
+If you're interest, the full source code can be found [on
+Github](https://github.com/BSFishy/zig-lexer).
+
+Thanks for reading! My name is Matt and I'm super passionate about
 language design and compiler architecture. I've been streaming exploring these
 topics over [on Twitch](https://www.twitch.tv/mattprovolone), and built most of
 this project on stream. If you have any questions or just want to chat about any
