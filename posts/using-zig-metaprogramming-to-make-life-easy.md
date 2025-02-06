@@ -15,8 +15,8 @@ metaprogramming.
 Zig's metaprogramming sticks out because it is quite restricted, in fact. You
 can't allocate memory, you can't interact with raw token streams or generate
 code for the compiler, and it imposes branch quotas for code that is run at
-runtime. However, despite these limitations, it is extraordinarily powerful for
-generating data and types at runtime. I just finished building a lexer generator
+comptime. However, despite these limitations, it is extraordinarily powerful for
+generating data and types at comptime. I just finished building a lexer generator
 entirely in Zig comptime and I want to take you along the journey of building
 it.
 
@@ -27,7 +27,7 @@ has a form of metaprogramming. You can write a procedural macro crate, which the
 compiler will invoke with a stream of tokens, to which you can respond with a
 stream of tokens. This is convenient in that it makes generating code super
 easy. However, it is super inconvenient because you now have to split your
-implementation across multiple crates.
+implementation across multiple crates and multiple contexts.
 
 Zig is a little bit different, because functions that are run at comptime
 (compile time) are located directly alongside the rest of your code. Instead of
@@ -65,7 +65,7 @@ fn ArrayList(comptime Item: type) type {
     /// Insert `item` into the dynamic array, allocating if needed
     fn append(self: *Self, item: Item) !void {
       const idx = self.items.len;
-      self.ensureCapacity(self.items.len);
+      try self.ensureCapacity(self.items.len);
       self.items[idx] = item;
     }
   };
