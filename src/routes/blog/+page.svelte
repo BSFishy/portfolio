@@ -34,6 +34,6 @@
 
 <style>
 	section > *:not(:first-child) > * {
-		border-top: var(--border-size) solid var(--primary-color);
+		border-top: calc(var(--spacing) * 0.1) solid var(--color-text-200);
 	}
 </style>

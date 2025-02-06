@@ -15,7 +15,7 @@
 <Centered restrictWidth={true} fullWidth={true} align="start" justify="start" hasHeader={false}>
 	<a class="mt-1 underline" href="/blog">Back to blog</a>
 
-	<h1 class="text-6xl mt-1">{post.title}</h1>
+	<h1 class="text-4xl mt-1">{post.title}</h1>
 
 	<span class="text-sm mb-1.5">{post.date?.toLocaleDateString()}</span>
 
@@ -55,16 +55,22 @@
 			overflow: auto;
 		}
 
+		h2 {
+			font-size: var(--text-3xl);
+		}
+
 		a {
 			text-decoration: underline;
 		}
 
-		li {
-			list-style: disc;
+		ol {
+			padding: revert;
+			list-style: decimal;
 		}
 
 		ul {
 			padding: revert;
+			list-style: disc;
 		}
 
 		p {
