@@ -24,7 +24,7 @@
       max-w-1/2 min-w-[375px] mt-4"
 		>
 			<enhanced:img
-				src="./headshot.jpg"
+				src="./headshot.png"
 				alt="Headshot"
 				class="headshot rounded-3xl"
 				width="250"
